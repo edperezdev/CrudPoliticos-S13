@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  width: 80%;
+  background-color: $primary-grey;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  margin: auto;
+  box-sizing: border-box;
+  width: 100%;
+  .titulo {
+    h1 {
+      font: $font-title;
+    }
+  }
+  .add-congresista h3 {
+    color: $primary-white;
+    font: $font-title-add;
+ 
+    &:hover{
+      cursor:pointer;
+      color: $secondary-white;
+    }
+  }
+}

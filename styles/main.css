@@ -1,0 +1,39 @@
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  background-color: gray;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5rem;
+  margin: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+}
+
+header .titulo h1 {
+  font: bold 2rem Helvetica;
+}
+
+header .add-congresista h3 {
+  color: white;
+  font: normal 0.9rem Monospace;
+}
+
+header .add-congresista h3:hover {
+  cursor: pointer;
+  color: #dde3e6;
+}
+
+.web-wrapper {
+  width: 90%;
+  margin: 2rem auto;
+  border: 6px solid rgba(31, 109, 128, 0.76);
+}
+/*# sourceMappingURL=main.css.map */
