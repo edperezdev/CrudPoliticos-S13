@@ -1,25 +1,29 @@
 header {
   display: flex;
-  width: 80%;
-  background-color: $primary-grey;
+  width: 100%;
+  background: rgb(122, 84, 22);
+  background: linear-gradient(
+    90deg,
+    rgba(122, 84, 22, 1) 9%,
+    rgba(221, 178, 61, 1) 70%
+  );
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.2rem 2rem;
   margin: auto;
   box-sizing: border-box;
-  width: 100%;
+
   .titulo {
     h1 {
       font: $font-title;
+      color: $primary-white;
     }
   }
-  .add-congresista h3 {
-    color: $primary-white;
-    font: $font-title-add;
- 
-    &:hover{
-      cursor:pointer;
-      color: $secondary-white;
+  .add-politico {
+    background: linear-gradient(to bottom, #e5f1ea 5%, #554307 100%);
+    &:hover {
+      background: linear-gradient(to bottom, #201f1d 5%, #814a0b 100%);
+      background-color: #0061a7;
     }
   }
 }

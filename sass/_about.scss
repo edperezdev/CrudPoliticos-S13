@@ -1,0 +1,12 @@
+#about{
+    padding: 1.2rem 2rem;
+  margin: auto;
+  box-sizing: border-box;
+  .about-content{
+      p{
+          margin-bottom:10px;
+          line-height: 1.5rem;
+          font:$font-p;
+      }
+  }
+}

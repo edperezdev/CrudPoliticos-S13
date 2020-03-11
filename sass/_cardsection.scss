@@ -1,0 +1,15 @@
+#cards{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+    padding:1rem;
+    .card{
+        border:1px solid black;
+        padding:1rem;
+        .card-image{
+            max-width:170px;
+            border-radius: 100px;
+            
+        }
+    }
+}

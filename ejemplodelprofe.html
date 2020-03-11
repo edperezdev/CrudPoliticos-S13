@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      form {
+        width: 400px;
+        margin: auto;
+        border: 1px solid #cdcdcd;
+        padding: 20px;
+      }
+
+      input {
+        width: 100%;
+        padding: 15px 10px;
+        margin-bottom: 15px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px 20px;
+        background: green;
+        color: white;
+        font-weight: bold;
+        border: 1px solid green;
+        cursor: pointer;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      input:focus:invalid {
+        border-color: red;
+      }
+
+      .users {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <input required type="text" name="name" placeholder="Nombre" />
+      <br />
+      <input required type="text" name="lastname" placeholder="Apellido" />
+      <br />
+      <input required type="text" name="age" placeholder="Edad" />
+      <br />
+      <input required type="text" name="photo" placeholder="Url Foto" />
+      <br />
+      <input required type="text" name="phone" placeholder="Telefono" />
+      <br />
+      <input required type="text" name="email" placeholder="Correo" />
+      <br />
+      <button>Enviar</button>
+    </form>
+
+    <div class="users" id="users"></div>
+
+    <script>
+      function getValues() {
+        const inputName = document.querySelector("[name='name']");
+        const inputLastname = document.querySelector("[name='lastname']");
+        const inputAge = document.querySelector("[name='age']");
+        const inputUrlPhoto = document.querySelector("[name='photo']");
+        const inputPhone = document.querySelector("[name='phone']");
+        const inputEmail = document.querySelector("[name='email']");
+
+        return {
+          elements: {
+            inputName,
+            inputLastname,
+            inputAge,
+            inputUrlPhoto,
+            inputPhone,
+            inputEmail
+          }, 
+          values: {
+            name: inputName.value,
+            lastname: inputLastname.value,
+            age: inputAge.value,
+            photo: inputUrlPhoto.value,
+            phone: inputPhone.value,
+            email: inputEmail.value
+          }
+        };
+      }
+
+      function init() {
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          const values = getValues().values;
+          const users = localStorage.getItem("users")
+            ? JSON.parse(localStorage.getItem("users"))
+            : localStorage.setItem("users", JSON.stringify([values]));
+
+          insertCard(createCard(values));
+
+          this.reset();
+        });
+
+        if (localStorage.getItem("users")) {
+          const users = JSON.parse(localStorage.getItem("users"));
+          users.forEach(function(user) {
+            insertCard(createCard(user));
+          });
+        }
+      }
+
+      function insertCard(card) {
+        const container = document.getElementById("users");
+        container.appendChild(card);
+      }
+
+      function createCard(values) {
+        const { name, lastname, age, photo, phone, email } = values;
+
+        const card = document.createElement("article");
+        card.classList.add("card");
+        card.innerHTML = `
+            <header>
+              ${name}
+            </header>
+            <div>
+              <figure>
+                <img src="${photo}"/>
+              </figure>
+              <ul>
+                <li>
+                  <span>Nombre</span>:${name} ${lastname}
+                </li>
+                <li>
+                  <span>Telefono</span>:${phone}
+                </li>
+                <li>
+                  <span>Email</span>:${email}
+                </li>
+              </ul>
+            </div>
+            <footer>
+              <button class="js_edit">Editar</button>
+              <button class="js_delete">Eliminar</button>
+            </footer>
+        `;
+
+        card.querySelector(".js_edit").onclick = function() {
+          console.log("values", values);
+          console.log(getValues().elements)
+          const {
+            inputName,
+            inputLastname,
+            inputAge,
+            inputUrlPhoto,
+            inputPhone,
+            inputEmail
+          } = getValues().elements;
+
+          inputName.value = values.name;
+          inputLastname.value = values.lastname;
+          inputAge.value = values.age;
+          inputUrlPhoto.value = values.photo;
+          inputPhone.value = values.phone;
+          inputEmail.value = values.email;
+
+          card.innerHTML = `
+          
+          `
+        };
+
+        card.querySelector(".js_delete").onclick = function() {
+          this.closest(".card").remove();
+        };
+
+        return card;
+      }
+
+      init();
+    </script>
+  </body>
+</html>

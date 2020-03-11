@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    scroll-behavior: smooth;
+    color: $black;
+    // background-image: url(./../images/fondo2.png);
+  }
+
+  button{
+      border:none;
+  }

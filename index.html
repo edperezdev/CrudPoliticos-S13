@@ -13,22 +13,82 @@
     <div class="web-wrapper">
         <header>
             <div class="titulo">
-                <h1>Congresistas favoritos</h1>
+                <h1>Políticos peruanos</h1>
             </div>
-            <div class="add-congresista">
-                <h3>Añadir congresista</h3>
-            </div>
+            <button class="btn add-politico">
+                <h3>Añadir político</h3>
+            </button>
         </header>
         <section id="about">
             <div class="about-content">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe iure nulla labore nemo fuga
                     excepturi deleniti sint impedit vitae sunt, reiciendis laborum unde quos quia iste accusantium,
                     quaerat vel.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis saepe iure nulla labore nemo fuga
+                    excepturi deleniti sint impedit vitae sunt, reiciendis laborum unde quos quia iste accusantium,
+                    quaerat vel.</p>
             </div>
         </section>
-        <section id="content">
+        <section id="cards">
+
 
         </section>
+
+        <div class="modal" id="createmodal">
+            <div class="modal-inner">
+              <div class="modal-header">
+              
+                  <span class="modal-elementClose">[X]</span>
+              </div>
+              <div class="modal-body">
+                  <div class="modal-body-text"><h2>¡Por favor completa los siguientes datos del sospechoso!</h2></div>
+                      <form class="modal-form form-create">
+                        <input type="text" required placeholder="Nombres" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+                        <input type="text" required placeholder="Apellidos" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+                        <input type="text" required placeholder="Partido Político">
+                        <input type ="text" required placeholder="Alias" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+                        <input type="url" required placeholder="URL de fotografía">
+                        <textarea name="comment" required placeholder="Cuéntanos más"></textarea>
+                 
+                          <div class="modal-footer">
+                              <button class="btn modal-aceptar" type="submit">Aceptar</button>
+                              <button class="btn modal-reset" type="reset">Reiniciar</button>
+                              <button class="btn modal-cancel">Cancelar</button>
+                          </div>
+  
+                      </form>
+              </div>
+              
+            </div>
+
+
+    </div>
+        <div class="modal" id="editmodal">
+            <div class="modal-inner">
+              <div class="modal-header">
+              
+                  <span class="modal-elementClose">[X]</span>
+              </div>
+              <div class="modal-body">
+                  <div class="modal-body-text"><h2>¡Edita los datos del sospechoso!</h2></div>
+                      <form class="modal-form form-edit">
+                        <input type="text" required placeholder="Nombres" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+                        <input type="text" required placeholder="Apellidos" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+                        <input type="text" required placeholder="Partido Político">
+                        <input type ="text" required placeholder="Alias" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+                        <input type="url" required placeholder="URL de fotografía">
+                        <textarea name="comment" required placeholder="Cuéntanos más"></textarea>
+                 
+                          <div class="modal-footer">
+                              <button class="btn modal-aceptar" type="submit">Aceptar</button>
+                              <button class="btn modal-reset" type="reset">Reiniciar</button>
+                              <button class="btn modal-cancel">Cancelar</button>
+                          </div>
+  
+                      </form>
+              </div>
+              
+            </div>
 
 
     </div>

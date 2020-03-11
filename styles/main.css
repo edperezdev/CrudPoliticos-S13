@@ -1,39 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  scroll-behavior: smooth;
+  color: black;
+}
+
+button {
+  border: none;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80%;
-  background-color: gray;
+  width: 100%;
+  background: #7a5416;
+  background: -webkit-gradient(linear, left top, right top, color-stop(9%, #7a5416), color-stop(70%, #ddb23d));
+  background: linear-gradient(90deg, #7a5416 9%, #ddb23d 70%);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.5rem;
+  padding: 1.2rem 2rem;
   margin: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 100%;
 }
 
 header .titulo h1 {
   font: bold 2rem Helvetica;
-}
-
-header .add-congresista h3 {
   color: white;
-  font: normal 0.9rem Monospace;
 }
 
-header .add-congresista h3:hover {
-  cursor: pointer;
-  color: #dde3e6;
+header .add-politico {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #e5f1ea), to(#554307));
+  background: linear-gradient(to bottom, #e5f1ea 5%, #554307 100%);
+}
+
+header .add-politico:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #201f1d), to(#814a0b));
+  background: linear-gradient(to bottom, #201f1d 5%, #814a0b 100%);
+  background-color: #0061a7;
 }
 
 .web-wrapper {
   width: 90%;
-  margin: 2rem auto;
-  border: 6px solid rgba(31, 109, 128, 0.76);
+  margin: 0.5rem auto;
+  border: 6px solid black;
+}
+
+#about {
+  padding: 1.2rem 2rem;
+  margin: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#about .about-content p {
+  margin-bottom: 10px;
+  line-height: 1.5rem;
+  font: normal 0.9rem Helvetica;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  padding: 20px;
+}
+
+.modal .modal-inner {
+  padding: 1rem;
+  background-image: url(./../images/wanted.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  max-width: 480px;
+  width: 100%;
+  height: 100%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
+}
+
+.modal .modal-inner .modal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  margin: 0 10px 0 auto;
+}
+
+.modal .modal-inner .modal-header .modal-elementClose {
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.modal .modal-inner .modal-header .modal-elementClose:hover {
+  color: black;
+}
+
+.modal .modal-inner .modal-body .modal-body-text {
+  max-width: 400px;
+  margin: 7.5rem auto 0 auto;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  font: bold 1.2rem Helvetica;
+}
+
+.modal .modal-inner .modal-body .modal-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  gap: 5px;
+  padding: 0.2rem 1.2rem;
+}
+
+.modal .modal-inner .modal-body .modal-form input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.883);
+  font-weight: bold;
+  text-align: center;
+}
+
+.modal .modal-inner .modal-body .modal-form input[type="url"] {
+  grid-column: span 2;
+}
+
+.modal .modal-inner .modal-body .modal-form textarea {
+  grid-column: span 2;
+  height: 170px;
+  resize: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.883);
+}
+
+.modal .modal-inner .modal-body .modal-form .modal-footer {
+  grid-column: span 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+}
+
+.modal .modal-inner .modal-body .modal-form .modal-footer .btn {
+  margin: 0.2rem auto;
+}
+
+/* Modal animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.btn {
+  -webkit-box-shadow: inset 0px 0px 5px 0px #27292a;
+          box-shadow: inset 0px 0px 5px 0px #27292a;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #7a5416), to(#554307));
+  background: linear-gradient(to bottom, #7a5416 5%, #554307 100%);
+  background-color: #88b118;
+  border-radius: 7px;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 11px 24px;
+  text-decoration: none;
+  border: none;
+  text-shadow: 0px 1px 0px #000000;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.btn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #ddb23d), to(#814a0b));
+  background: linear-gradient(to bottom, #ddb23d 5%, #814a0b 100%);
+  background-color: #0061a7;
+}
+
+.btn:active {
+  position: relative;
+  top: 3px;
+}
+
+#cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 1rem;
+}
+
+#cards .card {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+#cards .card .card-image {
+  max-width: 170px;
+  border-radius: 100px;
 }
 /*# sourceMappingURL=main.css.map */

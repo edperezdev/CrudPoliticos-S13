@@ -1,0 +1,25 @@
+.btn {
+    box-shadow: inset 0px 0px 5px 0px #27292a;
+    background: linear-gradient(to bottom, #7a5416 5%, #554307 100%);
+    background-color: #88b118;
+    border-radius: 7px;
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 11px 24px;
+    text-decoration: none;
+    border: none;
+    text-shadow: 0px 1px 0px #000000;
+    transition: all 1s ease-in-out;
+
+    &:hover {
+      background: linear-gradient(to bottom, #ddb23d 5%, #814a0b 100%);
+      background-color: #0061a7;
+    }
+    &:active {
+      position: relative;
+      top: 3px;
+    }
+  }
