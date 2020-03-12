@@ -115,6 +115,7 @@ function createCard(values) {
     abrirEditModal();
     formEditInit(card);
   });
+  
 }
 
 function abrirEditModal() {
@@ -148,8 +149,7 @@ function formEditInit(card) {
   let btnenviar = formedit.querySelector(".modal-aceptar");
   btnenviar.addEventListener("click", function() {
     event.preventDefault();
-    // printValuesinCard(getValuesCard(card));
-    formedit.reset();
+    imprimirdatosenCard (card)
     this.closest(".modal").style.display = "none";
   });
 }
@@ -174,11 +174,46 @@ function getValuesCard(element) {
   };
 }
 
-// function printValuesinCard() {
-//   valorescarta.apellidos = inputLastname.value;
-//   valorescarta.nombres = inputName.value;
-//   valorescarta.partido = inputPartido.value;
-//   valorescarta.alias = inputAlias.value;
-//   valorescarta.comentario = textAreaComentario.value;
-//   valorescarta.foto = inputUrlPhoto.value;
-// }
+function imprimirdatosenCard (element){
+  let formedit = document.querySelector(".form-edit");
+  const valores = getValues(formedit).values;
+  this.element.innerHTML = ` 
+<div>
+  <figure>
+    <img class="card-image" src="${valores.foto}"/>
+  </figure>
+  <ul>
+    <li>
+      <span>Nombre :</span>
+        <span class="nombres">${valores.nombres}</span>
+        <span class="apellidos">${valores.apellidos}</span>
+    </li>
+    <li>
+      <span>Partido Político:</span>
+      <span class="partido">${valores.partido}</span>
+    </li>
+    <li>
+      <span>Alias:</span>
+      <span class="alias">${valores.alias}</span>
+    </li>
+    <li>
+      <span>Comentario:</span>
+      <span class="comentario">${valores.comentario}</span>
+    </li>
+  </ul>
+</div>
+<footer>
+  <button class="btn js_edit">Editar</button>
+  <button class="btn js_delete">Eliminar</button>
+</footer>`
+ 
+this.element.querySelector(".js_delete").onclick = function() {
+  this.closest(".card").remove();
+};
+this.element.querySelector(".js_edit").addEventListener("click", function() {
+  abrirEditModal();
+  formEditInit(element);
+});
+
+
+}

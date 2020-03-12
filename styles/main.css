@@ -249,12 +249,53 @@ header .add-politico:hover {
 }
 
 #cards .card {
-  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1.5px solid black;
   padding: 1rem;
 }
 
-#cards .card .card-image {
-  max-width: 170px;
-  border-radius: 100px;
+#cards .card figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#cards .card figure .card-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  border: 5px solid rgba(111, 111, 136, 0.726);
+}
+
+#cards .card footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 0.5rem;
+}
+
+#cards .card footer button {
+  padding: 5px 18px;
+}
+
+#cards .card footer button:last-child {
+  margin-left: 5px;
 }
 /*# sourceMappingURL=main.css.map */
