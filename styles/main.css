@@ -55,7 +55,7 @@ header .add-politico:hover {
 
 .web-wrapper {
   width: 90%;
-  margin: 0.5rem auto;
+  margin: 2rem auto 0.5rem auto;
   border: 6px solid black;
   background-color: rgba(255, 255, 255, 0.548);
   -webkit-box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.75);
@@ -408,11 +408,11 @@ header .add-politico:hover {
   margin-top: 0px;
 }
 
-/* Footer */
-footer {
+/* Cherry */
+.cherry {
   left: 0;
   position: absolute;
-  bottom: 0;
+  top: 0;
   width: 100%;
   background-color: rgba(189, 100, 100, 0.658);
   color: white;
