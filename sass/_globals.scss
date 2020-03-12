@@ -6,9 +6,11 @@
   body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     scroll-behavior: smooth;
+    height:100%;
     color: $black;
-    // background-image: url(./../images/fondo2.png);
+    background-image: url(./../images/fondo1.png);
   }
+ 
 
   button{
       border:none;

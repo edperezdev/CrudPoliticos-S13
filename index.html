@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <main>
     <div class="web-wrapper">
         <header>
             <div class="titulo">
@@ -72,12 +73,30 @@
               <div class="modal-body">
                   <div class="modal-body-text"><h2>¡Edita los datos del sospechoso!</h2></div>
                       <form class="modal-form form-edit">
-                        <input type="text" required placeholder="Nombres" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
-                        <input type="text" required placeholder="Apellidos" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
-                        <input type="text" required placeholder="Partido Político">
-                        <input type ="text" required placeholder="Alias" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
-                        <input type="url" required placeholder="URL de fotografía">
+                        <div>
+                            <span>Nombres:</span>
+                            <input type="text" required placeholder="Nombres" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+                        </div>
+                        <div>
+                            <span>Apellidos:</span>
+                            <input type="text" required placeholder="Apellidos" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+                        </div>
+                        <div>
+                            <span>Partido Político:</span>
+                            <input type="text" required placeholder="Partido Político">
+                        </div>
+                        <div>
+                            <span>Alias:</span>
+                            <input type ="text" required placeholder="Alias" pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+                        </div>
+                        <div class="two-columns">
+                            <span>URL de fotografía:</span>
+                            <input type="url" required placeholder="URL de fotografía">
+                        </div>
                         <textarea name="comment" required placeholder="Cuéntanos más"></textarea>
+                       
+                    
+                        
                  
                           <div class="modal-footer">
                               <button class="btn modal-aceptar" type="submit">Aceptar</button>
@@ -92,7 +111,13 @@
 
 
     </div>
-    <script src="scripts/main.js"></script>
+    
+    
+</main>
+<footer>
+    Desarrollado por Edwin Pérez - marzo del 2020
+  </footer>
+  <script src="scripts/main.js"></script>
 </body>
 
 </html>

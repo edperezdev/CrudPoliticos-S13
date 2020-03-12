@@ -78,33 +78,38 @@ function createCard(values) {
   card.classList.add("card");
   card.innerHTML = ` 
 <div>
+<div class="card-buttons">
+  <span class="js_edit">Editar</span>
+  <span class="js_delete">[x]</span>
+</div>
   <figure>
     <img class="card-image" src="${foto}"/>
   </figure>
-  <ul>
+  <ul class="card-ul">
     <li>
-      <span>Nombre :</span>
-        <span class="nombres">${nombres}</span>
-        <span class="apellidos">${apellidos}</span>
+      <span class="card-data">Nombre :</span>
+      <div>
+        <span class="card-input-text nombres">${nombres}</span>
+        <span class="card-input-text apellidos">${apellidos}</span>
+      </div>
     </li>
     <li>
-      <span>Partido Político:</span>
-      <span class="partido">${partido}</span>
+      <span class="card-data">Partido Político:</span>
+      <span class="card-input-text partido">${partido}</span>
     </li>
     <li>
-      <span>Alias:</span>
-      <span class="alias">${alias}</span>
+      <span class="card-data">Alias:</span>
+      <span class="card-input-text alias">${alias}</span>
     </li>
     <li>
-      <span>Comentario:</span>
-      <span class="comentario">${comentario}</span>
+      <span class="card-data">Comentario:</span>
+      </li>
+      <li>
+      <span class="card-input-text comentario">${comentario}</span>
     </li>
   </ul>
 </div>
-<footer>
-  <button class="btn js_edit">Editar</button>
-  <button class="btn js_delete">Eliminar</button>
-</footer>`;
+`;
   const cardSection = document.getElementById("cards");
   cardSection.appendChild(card);
 
@@ -179,33 +184,38 @@ function imprimirdatosenCard (element){
   const valores = getValues(formedit).values;
   this.element.innerHTML = ` 
 <div>
+<div class="card-buttons">
+  <span class="js_edit">Editar</span>
+  <span class="js_delete">[x]</span>
+</div>
   <figure>
     <img class="card-image" src="${valores.foto}"/>
   </figure>
-  <ul>
+  <ul class="card-ul">
     <li>
-      <span>Nombre :</span>
-        <span class="nombres">${valores.nombres}</span>
-        <span class="apellidos">${valores.apellidos}</span>
+      <span class="card-data">Nombre :</span>
+      <div>
+        <span class="card-input-text nombres">${valores.nombres}</span>
+        <span class="card-input-text apellidos">${valores.apellidos}</span>
+      </div>
     </li>
     <li>
-      <span>Partido Político:</span>
-      <span class="partido">${valores.partido}</span>
+      <span class="card-data">Partido Político:</span>
+      <span class="card-input-text partido">${valores.partido}</span>
     </li>
     <li>
-      <span>Alias:</span>
-      <span class="alias">${valores.alias}</span>
+      <span class="card-data">Alias:</span>
+      <span class="card-input-text alias">${valores.alias}</span>
     </li>
     <li>
-      <span>Comentario:</span>
-      <span class="comentario">${valores.comentario}</span>
+      <span class="card-data">Comentario:</span>
+      </li>
+      <li>
+      <span class="card-input-text comentario">${valores.comentario}</span>
     </li>
   </ul>
 </div>
-<footer>
-  <button class="btn js_edit">Editar</button>
-  <button class="btn js_delete">Eliminar</button>
-</footer>`
+`
  
 this.element.querySelector(".js_delete").onclick = function() {
   this.closest(".card").remove();

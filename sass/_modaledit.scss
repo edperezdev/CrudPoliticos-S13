@@ -1,0 +1,23 @@
+// Modal de Edición
+
+#editmodal {
+    .form-edit {
+      span {
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
+    }
+    .two-columns {
+      grid-column: span 2;
+    }
+    input{
+      margin-top:5px;
+    }
+    textarea{
+      height: 140px;
+      margin-bottom:0px;
+    }
+    .modal-footer{
+      margin-top:0px;
+    }
+  }
